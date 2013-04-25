@@ -4,19 +4,21 @@ require 'torquebox-messaging'
 module AWS
 
   class StartInstance
-  	def initialize(options = {})
-		@queue = TorqueBox::Messaging::Queue.new('/queues/vms_to_start')
+    include TorqueBox::Injectors
+  	
+    def initialize(options = {})
+		  @queue = TorqueBox::Messaging::Queue.new('/queues/vms_to_start')
   	end
 
   	def run
-	  push_message
-	  check_queue
-	  receive_messages
+	    push_message
+	    check_queue
+	    receive_messages
   	end
 
   	def push_message
-	  @queue.publish "id fake"
-	  puts 'message pushed!!!'
+	    @queue.publish "id fake"
+	    puts 'message pushed!!!'
   	end
 
   	def check_queue
