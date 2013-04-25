@@ -1,0 +1,5 @@
+services:
+  SampleService:
+    config:
+      url: oiiii
+      keywords: leanstartup

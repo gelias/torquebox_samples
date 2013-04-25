@@ -1,0 +1,5 @@
+jobs:
+  mail.notifier:
+    job:         Mail::Notifier
+    cron:        '*/1 * * * * ?'
+    description: Deliver queued mail notifications

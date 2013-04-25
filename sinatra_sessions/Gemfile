@@ -1,0 +1,5 @@
+source  "http://rubygems.org"
+
+gem "sinatra"
+gem "torquebox","~> 2.3.0"
+
