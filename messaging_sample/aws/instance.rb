@@ -11,12 +11,10 @@ module AWS
   	def run
 	  push_message
 	  check_queue
+	  receive_messages
   	end
 
   	def push_message
-	  #queue = inject('/queues/vms_to_start')
-	  #queue = TorqueBox::Messaging::Queue.new('/queues/vms_to_start')
-	  #queue = TorqueBox.fetch('/queues/vms_to_start')
 	  @queue.publish "id fake"
 	  puts 'message pushed!!!'
   	end
@@ -24,6 +22,8 @@ module AWS
   	def check_queue
   	  puts "VMs to start #{@queue.count_messages}"
   	end
+
+  	def 
 
   end
 end
